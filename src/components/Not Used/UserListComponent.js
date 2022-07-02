@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import UserService from '../services/UserService'
+import AnggotaService from '../../services/AnggotaService'
 import { useNavigate } from 'react-router-dom'
 
 const UserListComponent = () => {
@@ -8,7 +8,7 @@ const UserListComponent = () => {
   const history = useNavigate();
 
   useEffect(() => {
-    UserService.getAllUser().then((res) => {
+    AnggotaService.getAllUser().then((res) => {
       setUsers(res.data)
     }).catch((error) => {
       serErr(error)

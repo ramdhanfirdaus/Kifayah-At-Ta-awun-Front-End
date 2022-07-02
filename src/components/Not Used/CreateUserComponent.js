@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import UserService from '../services/UserService'
+import AnggotaService from '../../services/AnggotaService'
 import { useNavigate } from 'react-router-dom'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
@@ -39,7 +39,7 @@ const CreateUserComponent = () => {
         console.log(formData)
 
         try {
-            await UserService.createUser(formData, mulitpleFileOptions)
+            await AnggotaService.createUser(formData, mulitpleFileOptions)
             history('/users')
         } catch (e) {
             alert(e)

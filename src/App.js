@@ -1,19 +1,30 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import UserListComponent from "./components/UserListComponent";
-import UpdateUserComponent from './components/UpdateUserComponent';
-import CreateUserComponent from './components/CreateUserComponent';
+import HomePageComponent from './components/HomePageComponent';
+import UserListComponent from "./components/Not Used/UserListComponent";
+import DetailUserComponent from './components/Not Used/DetailUserComponent';
+import CreateUserComponent from './components/Not Used/CreateUserComponent';
+import PembayaranComponent from './components/PembayaranComponent';
+import DaftarAnggotaComponent from './components/DaftarAnggotaComponent';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
-  return (
+  return (<>
+    <Navbar />
     <Router>
-      <div className="container">
+      <div className="">
         <Routes>
-          <Route path="/users" element={<UserListComponent />}></Route>
-          <Route path="/users/detail/:nik" element={<UpdateUserComponent />}></Route>
-          <Route path="/users/add-user" element={<CreateUserComponent />}></Route>
+          <Route path="/" element={<HomePageComponent />}></Route>
+          <Route path="/pembayaran" element={<PembayaranComponent />}></Route>
+          <Route path="/daftar-anggota" element={<DaftarAnggotaComponent />}></Route>
+          <Route path="/daftar-anggota/:nik" element={<UserListComponent />}></Route>
+          <Route path="/daftar-anggota/pendaftaran/:no" element={<DetailUserComponent />}></Route>
+          <Route path="/tambah-anggota" element={<CreateUserComponent />}></Route>
         </Routes>
       </div>
     </Router>
+    <Footer />
+  </>
   );
 }
 

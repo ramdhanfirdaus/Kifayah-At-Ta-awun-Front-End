@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import UserService from '../services/UserService'
+import AnggotaService from '../../services/AnggotaService'
 
-const UpdateUserComponent = () => {
-  const [isEdit, setIsEdit] = useState(false)
+const DetailUserComponent = () => {
   const [user, setUser] = useState(null)
   const [err, serErr] = useState(null)
   const { nik } = useParams()
   const history = useNavigate();
 
   useEffect(() => {
-    UserService.getUserByNIK(nik).then((res) => {
+    AnggotaService.getUserByNIK(nik).then((res) => {
       console.log(res.data)
       setUser(res.data)
     }).catch((error) => {
@@ -122,4 +121,4 @@ const UpdateUserComponent = () => {
   )
 }
 
-export default UpdateUserComponent
+export default DetailUserComponent

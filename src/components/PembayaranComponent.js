@@ -92,7 +92,7 @@ const PembayaranComponent = () => {
                 </div>
                     <div className="mt-3">
                         <button onClick={getAllLaporan}
-                            className="">
+                            className="lihat-laporan">
                             Lihat Laporan
                         </button>
                     </div>

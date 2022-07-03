@@ -53,12 +53,9 @@ const HomePageComponent = () => {
             <div className="container" data-aos="fade-up">
                 <div className="row">
 
-                    <div className="col-lg-3 col-md-6">
-                    </div>
-
                     {(() => {
                         if (errAnggota === null) {
-                            return <div className="col-lg-3 col-md-6">
+                            return <div className="col-lg-6 col-md-6 mt-5 mt-md-0">
                                 <div className="count-box">
                                     <i className="bi bi-emoji-smile"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" className="purecounter">{allAnggota.length}</span>
@@ -70,7 +67,7 @@ const HomePageComponent = () => {
 
                     {(() => {
                         if (errTimes === null) {
-                            return <div className="col-lg-3 col-md-6 mt-5 mt-md-0">
+                            return <div className="col-lg-6 col-md-6 mt-5 mt-md-0">
                                 <div className="count-box">
                                     <i className="bi bi-calendar2-week"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" className="purecounter">{allTimes.length}</span>
@@ -79,9 +76,6 @@ const HomePageComponent = () => {
                             </div>
                         }
                     })()}
-
-                    <div className="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                    </div>
 
                 </div>
 
@@ -202,14 +196,14 @@ const HomePageComponent = () => {
                                 <div className="info-box">
                                     <i className="bx bx-envelope"></i>
                                     <h3>Email</h3>
-                                    <p>info@example.com</p>
+                                    <p>at_taawun@gmail.com</p>
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="info-box">
                                     <i className="bx bx-phone-call"></i>
                                     <h3>No. Telepon</h3>
-                                    <p>+1 5589 55488 55</p>
+                                    <p>+62 882 1817 3671</p>
                                 </div>
                             </div>
                         </div>

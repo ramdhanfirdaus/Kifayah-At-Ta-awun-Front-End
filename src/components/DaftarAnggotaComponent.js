@@ -39,7 +39,7 @@ const DaftarAnggotaComponent = () => {
                 nik: element.nik,
                 nama: element.nama,
                 status: element.status,
-                action: <button to='/view' className='btn btn-primary btn-sm'>Detail</button>
+                action: <button to='/view' className='btn btn-success btn-sm'>Detail</button>
             }
             arrayData.push(jsonData)
         })
@@ -53,7 +53,7 @@ const DaftarAnggotaComponent = () => {
                 nomor_anggota: element.nomor_anggota,
                 jumlah_anggota: element.jumlah_anggota,
                 nama_pemohon: element.nama_pemohon,
-                action: <button to='/view' className='btn btn-primary btn-sm'>Detail</button>
+                action: <button to='/view' className='btn btn-success btn-sm'>Detail</button>
             }
             arrayData.push(jsonData)
         })
@@ -91,7 +91,7 @@ const DaftarAnggotaComponent = () => {
         setData({
             columns: [
                 {
-                    label: 'Nomor Anggota',
+                    label: 'Nomor Pendaftaran',
                     field: 'nomor_anggota',
                     sort: 'asc',
                 },
@@ -120,7 +120,7 @@ const DaftarAnggotaComponent = () => {
         setData({
             columns: [
                 {
-                    label: 'Nomor Anggota',
+                    label: 'Nomor Pendaftaran',
                     field: 'nomor_anggota',
                     sort: 'asc',
                 },
@@ -154,12 +154,29 @@ const DaftarAnggotaComponent = () => {
             <div className="mx-auto">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                            <button class="page-link" onClick={setDataToPendaftaran}>Daftar Pendaftaran</button>
-                        </li>
-                        <li class="page-item">
-                            <button class="page-link" onClick={setDataToAnggota}>Daftar Anggota</button>
-                        </li>
+                        {(() => {
+                            if (judul === "Daftar Pendaftaran") {
+                                return <li class="page-item">
+                                    <button class="page-link selected" onClick={setDataToPendaftaran}>Daftar Pendaftaran</button>
+                                </li>
+                            } else {
+                                return <li class="page-item">
+                                    <button class="page-link" onClick={setDataToPendaftaran}>Daftar Pendaftaran</button>
+                                </li>
+                            }
+                        })()}
+
+                        {(() => {
+                            if (judul === "Daftar Anggota") {
+                                return <li class="page-item">
+                                    <button class="page-link selected" onClick={setDataToAnggota}>Daftar Anggota</button>
+                                </li>
+                            } else {
+                                return <li class="page-item">
+                                    <button class="page-link" onClick={setDataToAnggota}>Daftar Anggota</button>
+                                </li>
+                            }
+                        })()}
                     </ul>
                 </nav>
             </div>
